@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  api-gateway:
+    build: ./services/api-gateway
+    env_file:
+      - ./services/api-gateway/.env.example
+    ports:
+      - '3000:3000'
+    depends_on:
+      - auth-service
+      - koi-service
+
+  auth-service:
+    build: ./services/auth-service
+    env_file:
+      - ./services/auth-service/.env.example
+    ports:
+      - '3001:3001'
+
+  koi-service:
+    build: ./services/koi-service
+    env_file:
+      - ./services/koi-service/.env.example
+    ports:
+      - '3002:3002'

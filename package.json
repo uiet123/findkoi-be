@@ -1,0 +1,21 @@
+{
+  "name": "findkoi-be",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Microservices backend scaffold with Node.js and Express",
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n gateway,auth -c cyan,green \"npm run dev -w services/api-gateway\" \"npm run dev -w services/auth-service\"",
+    "start": "concurrently -n gateway,auth -c cyan,green \"npm run start -w services/api-gateway\" \"npm run start -w services/auth-service\"",
+    "micro:gateway": "npm run dev -w services/api-gateway",
+    "micro:auth": "npm run dev -w services/auth-service"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
