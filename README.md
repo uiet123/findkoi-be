@@ -60,15 +60,7 @@ Client -> API Gateway -> Individual services
    -d '{"title":"Kohaku","price":18000,"city":"Pune"}'
    ```
 
-## Docker
-
-Run all services with Docker:
-
-```bash
-docker compose up --build
-```
-
 ## Notes
 
-- Data is currently in-memory (no database yet).
-- Next natural step: add service-specific databases + message broker (RabbitMQ/Kafka).
+- Auth service uses a PostgreSQL database managed via Prisma ORM.
+- Next natural step: add service-specific databases + message broker (RabbitMQ/Kafka) for additional microservices.

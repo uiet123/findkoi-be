@@ -12,8 +12,18 @@
     "micro:gateway": "npm run dev -w services/api-gateway",
     "micro:auth": "npm run dev -w services/auth-service"
   },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "@prisma/client": "^5.22.0"
+  },
   "devDependencies": {
-    "concurrently": "^9.0.1"
+    "concurrently": "^9.0.1",
+    "prisma": "^5.22.0"
   },
   "engines": {
     "node": ">=18"
